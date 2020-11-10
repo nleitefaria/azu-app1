@@ -16,4 +16,9 @@ public class RegistrationController
 		return "@register - hi";
 	}
 	
+	@GetMapping("/api/v1/register/hello")
+	public String hello() {
+		return "@register - hello";
+	}
+	
 }
