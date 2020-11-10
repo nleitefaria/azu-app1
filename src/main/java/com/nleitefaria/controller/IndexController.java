@@ -24,9 +24,17 @@ public class IndexController
 		Company company3 = new Company();
 		company3.setId(3);
 
+		Company company4 = new Company();
+		company4.setId(4);
+
+		Company company5 = new Company();
+		company5.setId(5);
+
 		companyRepository.save(company1);
 		companyRepository.save(company2);
-		companyRepository.save(company3);	
+		companyRepository.save(company3);
+		companyRepository.save(company4);
+		companyRepository.save(company5);
 		
 		return "inited DB";
 	}
