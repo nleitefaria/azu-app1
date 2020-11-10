@@ -8,7 +8,12 @@ public class RegistrationController
 {
 	@GetMapping("/api/v1/register/echo")
 	public String echo() {
-		return "@register";
+		return "@register - echo";
+	}
+	
+	@GetMapping("/api/v1/register/hi")
+	public String hi() {
+		return "@register - hi";
 	}
 	
 }
