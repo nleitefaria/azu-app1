@@ -8,8 +8,8 @@ import com.nleitefaria.model.Company;
 import com.nleitefaria.repository.CompanyRepository;
 
 @RestController
-public class IndexController {
-	
+public class IndexController 
+{
 	@Autowired
 	CompanyRepository companyRepository;
 	
