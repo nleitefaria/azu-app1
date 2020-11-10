@@ -1,0 +1,8 @@
+deploy:
+  provider: azure_web_apps
+  username: $AZURE_USER       # If AZURE_WA_USERNAME isn't set
+  password: $AZURE_PASSWORD   # If AZURE_WA_PASSWORD isn't set
+  site: azu-app1:azu-app1       # If AZURE_WA_SITE isn't set
+  
+  
+
