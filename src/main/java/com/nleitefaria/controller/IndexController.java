@@ -1,6 +1,12 @@
 package com.nleitefaria.controller;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,9 +19,10 @@ public class IndexController
 	@Autowired
 	CompanyRepository companyRepository;
 	
-	@GetMapping("/")
-	public String initDB() {
-		Company company1 = new Company();
+    @GetMapping("/")
+	public ResponseEntity<Object> initDB() 
+    {	
+    	Company company1 = new Company();
 		company1.setId(1);
 		
 		Company company2 = new Company();
@@ -36,7 +43,16 @@ public class IndexController
 		companyRepository.save(company4);
 		companyRepository.save(company5);
 		
-		return "inited DB";
+		URI uri;
+		HttpHeaders httpHeaders = new HttpHeaders();
+		try {
+			uri = new URI("/swagger-ui.html");
+			httpHeaders = new HttpHeaders();
+			httpHeaders.setLocation(uri);
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);	
 	}
-
 }
