@@ -8,18 +8,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nleitefaria.model.Company;
-import com.nleitefaria.repository.CompanyRepository;
+import com.nleitefaria.domain.CompanyDTO;
+import com.nleitefaria.service.CompanyService;
 
 @RestController
 public class CompanyController {
 	
 	@Autowired
-	CompanyRepository companyRepository;
+	CompanyService companyService;
 	
 	@GetMapping("/api/v1/companies")
-	public ResponseEntity<List<Company>> getAllCompanies()
+	public ResponseEntity<List<CompanyDTO>> findAll()
 	{
-		return new ResponseEntity<List<Company>>(companyRepository.findAll(), HttpStatus.OK);	
+		return new ResponseEntity<List<CompanyDTO>>(companyService.findAll(), HttpStatus.OK);	
 	}
 }
