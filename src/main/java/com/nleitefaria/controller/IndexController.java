@@ -72,7 +72,7 @@ public class IndexController
 		URI uri;
 		HttpHeaders httpHeaders = new HttpHeaders();
 		try {
-			uri = new URI("/swagger-ui.html");
+			uri = new URI("/swagger-ui/index.html");
 			httpHeaders = new HttpHeaders();
 			httpHeaders.setLocation(uri);
 		} catch (URISyntaxException e) {
