@@ -8,22 +8,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nleitefaria.domain.ProductDTO;
-import com.nleitefaria.service.ProductService;
+import com.nleitefaria.domain.AddressDTO;
+import com.nleitefaria.service.AddressService;
 
 import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
-public class ProductController {
-	
+public class AddressController 
+{
 	@Autowired
-	ProductService productService;
+	AddressService addressService;
 	
-	@Operation(summary = "Get all products")
-	@GetMapping("/api/v1/products")
-	public ResponseEntity<List<ProductDTO>> findAll()
+	@Operation(summary = "Get all addresses")
+	@GetMapping("/api/v1/addresses")
+	public ResponseEntity<List<AddressDTO>> findAll()
 	{
-		return new ResponseEntity<List<ProductDTO>>(productService.findAll(), HttpStatus.OK);	
+		return new ResponseEntity<List<AddressDTO>>(addressService.findAll(), HttpStatus.OK);	
 	}
 
 }
