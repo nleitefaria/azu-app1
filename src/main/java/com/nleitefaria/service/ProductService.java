@@ -13,16 +13,17 @@ import com.nleitefaria.model.Product;
 import com.nleitefaria.repository.ProductRepository;
 
 @Service
-public class ProductService {
-	
+public class ProductService 
+{
 	@Autowired
 	ProductRepository productRepository;
 	
-	public List<ProductDTO> findAll() {
+	public List<ProductDTO> findAll() 
+	{
 		List<ProductDTO> productDTOList = new ArrayList<ProductDTO>();		
 		for(Product product : productRepository.findAll())
 		{
-			ProductDTO productDTO = new ProductDTO(product.getSku(), product.getName(), product.getPrice());			
+			ProductDTO productDTO = new ProductDTO(product.getId(), product.getSku(), product.getName(), product.getPrice());			
 			productDTOList.add(productDTO);
 		}			
 		return productDTOList;
