@@ -30,7 +30,7 @@ public class ProductController {
 	}
 	
 	@Operation(summary = "Create a product")
-	@PostMapping("/api/v1/products")
+	@PostMapping("/api/v1/product")
 	public ResponseEntity<Product> save(@RequestBody ProductDTO productDTO) 
 	{
 	    Product product = productService.save(productDTO);		
